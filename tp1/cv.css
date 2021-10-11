@@ -5,13 +5,25 @@ body{
 
 
 table{
-    border:1px solid black;
-    background-color: white;
+    border:3px solid black;
+    background-color: rgb(163, 95, 95);
     width: 100%;
     border-collapse: collapse;
-    border:1px solid black;
+   
+}
+table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+td
+{
+    border: 2px solid black;
 }
 
+tr
+{
+    border: 2px solid black;
+}
 
 a{
 
