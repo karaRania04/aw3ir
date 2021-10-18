@@ -111,7 +111,7 @@ function validation()
     }
    
  
-  document.getElementById("resultat").innerHTML="Bienvenue Vos Informations sont Valides"+" "+name+" "+prenom ; 
+  document.getElementById("resultat").innerHTML="Bienvenue Vos Informations sont Validées"+" "+name+" "+prenom ; 
   document.getElementById("resultat").style.display = 'block' ;                                
 
   return true; 
