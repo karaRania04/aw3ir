@@ -1,0 +1,11 @@
+div.a{
+    background-color: rgb(247, 92, 151);
+    border:3px solid black;
+    padding: 5px;
+}
+
+div.b{
+    background-color: rgb(48, 128, 12);
+    border:3px solid rgb(255, 255, 255);
+    padding: 5px;
+}

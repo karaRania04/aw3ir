@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mon Formulaire</title>
+    <link rel="stylesheet" href="formulaire.css">
+  </head>
+  <body style="background-color:#a89595;">
+
+    <h1>Saisie d'une Fiche "Personne"</h1>
+    <form action="/ma-page-de-traitement" method="post">
+    <table  bgcolor="ffffff">
+    <tr>
+    <td>
+    
+    <table>
+        <div>
+        <tr>
+            <td><label for="name">Nom :</label></td>
+            <td><input type="text" id="name" name="user_name"></td>
+        </tr>
+        </div>
+
+
+        <div>
+            <tr>
+             <td><label for="prenom">Prenom :</label></td>
+             <td><input type="text" id="prenom" name="user_prenom"></td>
+            </tr>
+        </div>
+
+
+        <div>
+            <tr>
+            <td><label for="datenaissance">Date de Naissance :</label></td>
+            <td><input placeholder="JJ/MM/AAAA" type="email" id="datenaissance" name="user_datenaissance"></td>
+            </tr>
+        </div>
+
+
+        <div>
+            <tr>
+            <td><label for="adresse">Adresse :</label></td>
+            <td> <input type="name" id="adresse" name="user_adresse"></td>
+            </tr>
+        </div>
+
+
+        <div>
+            <tr>
+            <td><label for="mail">Mail :</label></td>
+            <td><input type="email" id="mail" name="user_mail"></td>
+            </tr>
+        </div>
+
+        <tr><td><td><input type="button" value="Valider"></td></td></tr>
+    </table> 
+    </td>
+    </tr> 
+    </table>
+    </form>
+    <a div id="error">Le nom doit contenir au moins 5caractere</div>
+    <b div id="resultat"></div>
+  </body>
+</html>
