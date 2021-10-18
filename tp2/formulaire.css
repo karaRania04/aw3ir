@@ -1,11 +1,14 @@
-div.a{
-    background-color: rgb(247, 92, 151);
-    border:3px solid black;
+div#error{
+    
+    background-color: rgb(219, 119, 157);
+    border:1px solid black;
     padding: 5px;
+    display: none;
 }
 
-div.b{
+div#resultat{
     background-color: rgb(48, 128, 12);
-    border:3px solid rgb(255, 255, 255);
+    border:1px solid rgb(255, 255, 255);
     padding: 5px;
+    display: none;
 }

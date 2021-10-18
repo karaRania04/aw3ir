@@ -3,62 +3,79 @@
     <meta charset="utf-8">
     <title>Mon Formulaire</title>
     <link rel="stylesheet" href="formulaire.css">
+    <script type="text/javascript" src="formulaire.js"></script>
   </head>
   <body style="background-color:#a89595;">
 
-    <h1>Saisie d'une Fiche "Personne"</h1>
-    <form action="/ma-page-de-traitement" method="post">
-    <table  bgcolor="ffffff">
+
+    <table  bgcolor="ffffff" align="center" border="3px"cellpadding="10" cellspacing="5" width="50%">
+      <tr><td>
+             <h1 align="center" >Saisie d'une Fiche "Personne"</h1>
+     </td></tr>
+   </table>
+    <form  method="post">
+    <table  bgcolor="ffffff" align="center" border="2px">
     <tr>
     <td>
     
-    <table>
+    <table >
         <div>
         <tr>
-            <td><label for="name">Nom :</label></td>
-            <td><input type="text" id="name" name="user_name"></td>
+            <td><label for="name"><h2>Nom :</h2></label></td>
+            <td><input type="text" id="name" name="user_name" required></td>
         </tr>
         </div>
 
 
         <div>
             <tr>
-             <td><label for="prenom">Prenom :</label></td>
-             <td><input type="text" id="prenom" name="user_prenom"></td>
+             <td><label for="prenom"><h2>Prenom :</h2></label></td>
+             <td><input type="text" id="prenom" name="user_prenom" required></td>
             </tr>
         </div>
 
 
         <div>
             <tr>
-            <td><label for="datenaissance">Date de Naissance :</label></td>
-            <td><input placeholder="JJ/MM/AAAA" type="email" id="datenaissance" name="user_datenaissance"></td>
+            <td><label for="datenaissance"><h2>Date de Naissance :</h2></label></td>
+            <td><input placeholder="JJ/MM/AAAA" type="date" id="datenaissance" name="user_datenaissance" required></td>
             </tr>
         </div>
 
 
         <div>
             <tr>
-            <td><label for="adresse">Adresse :</label></td>
-            <td> <input type="name" id="adresse" name="user_adresse"></td>
+            <td><label for="adresse"><h2>Adresse :</h2></label></td>
+            <td> <input type="name" id="adresse" name="user_adresse" required></td>
             </tr>
         </div>
 
 
         <div>
             <tr>
-            <td><label for="mail">Mail :</label></td>
-            <td><input type="email" id="mail" name="user_mail"></td>
+            <td><label for="mail"><h2>Mail :</h2></label></td>
+            <td><input type="email" id="mail" name="user_mail"
+              pattern=".+@globex\.com" placeholder="default@example.com"></td>
             </tr>
         </div>
-
-        <tr><td><td><input type="button" value="Valider"></td></td></tr>
+       <br><br>
+        <tr><td><td><input type="button" value="Valider" onclick="validation()"></td></td></tr>
     </table> 
     </td>
     </tr> 
     </table>
     </form>
-    <a div id="error">Le nom doit contenir au moins 5caractere</div>
-    <b div id="resultat"></div>
+    <table align="center">
+      <tr>
+        <td>
+        <div id="error" align="center" ></div>
+        <div id="resultat"align="center"></div>
+       </td>
+      </tr>
+      </table>
+      
+      
+      
+    
   </body>
 </html>
