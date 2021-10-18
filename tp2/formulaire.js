@@ -5,7 +5,7 @@ function validation()
     var datenaissance = document.getElementById("datenaissance").value;
     var adresse = document.getElementById("adresse").value;            
     var mail = document.getElementById("mail").value;  
-    var T=true; 
+   
 
     document.getElementById("error").style.display = 'none' ;                                
     document.getElementById("resultat").style.display = 'none';                                 
@@ -18,7 +18,7 @@ function validation()
         document.getElementById("error").style.display = 'block';                                
         myForm["name"].focus(); // Focus
        alert("Mettez votre nom."); 
-       T=false;
+     
         return false; 
         
     }else
@@ -36,7 +36,7 @@ function validation()
         document.getElementById("error").style.display = 'block' ;                          
         myForm["prenom"].focus(); // Focus
         alert("Mettez votre prenom."); 
-        T=false;
+       
         return false; 
     } else
         if(prenom.length<5)
@@ -52,7 +52,7 @@ function validation()
         document.getElementById("error").style.display = 'block' ;                              
         myForm["datenaissance"].focus(); // Focus
         alert("Mettez votre date de naissance."); 
-        T=false;
+     
         return false; 
     } else
     if(datenaissance.length<5)
@@ -69,7 +69,7 @@ function validation()
         document.getElementById("error").style.display = 'block';                           
         myForm["adresse"].focus(); // Focus
         alert("Mettez votre adresse."); 
-        T=false;
+       
         return false; 
     } else
         if(adresse.length<5)
@@ -88,7 +88,7 @@ function validation()
         document.getElementById("error").style.display = 'block' ;                             
         myForm["dmail"].focus(); // Focus
         alert("Mettez votre adresse mail."); 
-        T=false;
+       
         return false; 
     } else
         if(mail.length<5)
