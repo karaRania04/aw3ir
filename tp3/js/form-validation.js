@@ -71,7 +71,7 @@
         if(dateNaissanceTimestamp>nowTimestamp)
         {
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
-            document.querySelector(".modal-body ").textContent = "Erreur la date de naissance est dans le futur"
+            document.querySelector(".modal-body ").textContent = "La date de naissance est dans le futur"
             myModal.show();
             
             return false; 
