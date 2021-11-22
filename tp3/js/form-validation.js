@@ -28,11 +28,10 @@
         if (name=="")                                  
         { 
             
-            //myModal.show();
+            myModal.show();
             //document.getElementById("error").innerHTML="La saisie du nom est obligatoire"; 
             //document.getElementById("error").style.display = 'block';                                
             // myForm["name"].focus(); // Focus
-           alert("Mettez votre nom."); 
            
             return false; 
             
@@ -52,8 +51,7 @@
             // document.getElementById("error").innerHTML="La saisie du prenom est obligatoire";    
            // document.getElementById("error").style.display = 'block' ;                          
            // myForm["prenom"].focus(); // Focus
-            alert("Mettez votre prenom.");            
-            
+                         
            
             return false; 
         } else
@@ -71,7 +69,6 @@
             //document.getElementById("error").innerHTML="La saisie de la date de naissance est obligatoire";  
             //document.getElementById("error").style.display = 'block' ;                              
             //myForm["datenaissance"].focus(); // Focus
-            alert("Mettez votre date de naissance."); 
                      
             return false;
 
@@ -95,8 +92,6 @@
             //document.getElementById("error").innerHTML="La saisie de l'adresse est obligatoire";   
             //document.getElementById("error").style.display = 'block';                           
             //myForm["adresse"].focus(); // Focus
-            alert("Mettez votre adresse.");
-        
            
             return false; 
         } else
@@ -117,8 +112,6 @@
             //document.getElementById("error").innerHTML="La saisie du mail est obligatoire";  
             //document.getElementById("error").style.display = 'block' ;                             
             //myForm["dmail"].focus(); // Focus
-            alert("Mettez votre adresse mail."); 
-            
            
             return false; 
         } else
