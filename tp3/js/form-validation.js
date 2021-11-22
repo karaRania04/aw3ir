@@ -33,7 +33,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         }else
          if(name.length<5)
         {
-            document.getElementById("error").innerHTML="la taille du nom est courte";
+            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';
             return false; 
         }
@@ -50,7 +50,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         } else
             if(prenom.length<5)
         {
-            document.getElementById("error").innerHTML="la taille du prenom est courte";
+            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';
             return false; 
         }
@@ -83,7 +83,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         } else
             if(adresse.length<5)
         {
-            document.getElementById("error").innerHTML="la taille del'adresse est courte";
+            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';
             return false; 
         }
@@ -102,7 +102,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         } else
             if(mail.length<5)
         {
-            document.getElementById("error").innerHTML="la taille du mail est courte";
+            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';                                 
     
             return false; 
