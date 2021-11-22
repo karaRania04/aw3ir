@@ -141,7 +141,8 @@
      
       //document.getElementById("resultat").innerHTML="Bienvenue Vos Informations sont Validées"+" "+name+" "+prenom ; 
       //document.getElementById("resultat").style.display = 'block' ;    
-      document.querySelector(".modal-body .date").textContent = name
+     
+      document.querySelector(".modal-title .prenom").textContent =prenom;
       document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString()
       document.querySelector(".modal-body img").src = 'https://maps.googleapis.com/maps/api/staticmap?markers='+adresse+'&zoom=7&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'
         
