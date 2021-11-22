@@ -124,9 +124,11 @@
        
      
       document.querySelector(".modal-title .prenom").textContent =prenom;
-      document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString()
+      
+      document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString() 
       document.querySelector(".modal-body img").src = 'https://maps.googleapis.com/maps/api/staticmap?markers='+adresse+'&zoom=7&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'
-  
+      //document.querySelector(".modal-body .a").src = 'http://maps.google.com/maps?q=Londre'
+      //document.querySelector(".modal-body").innerHTML = '<a href="http://maps.google.com/maps?q=Paris?" />' 
       myModal1.show();
      return true;
 
