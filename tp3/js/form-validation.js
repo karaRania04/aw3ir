@@ -14,7 +14,7 @@
         var datenaissance = document.getElementById("datenaissance").value;
         var adresse = document.getElementById("adresse").value;            
         var mail = document.getElementById("mail").value;  
-       
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'));
     
         document.getElementById("error").style.display = 'none' ;                                
         document.getElementById("resultat").style.display = 'none';                                 
@@ -28,7 +28,6 @@
             document.getElementById("error").style.display = 'block';                                
             myForm["name"].focus(); // Focus
            alert("Mettez votre nom."); 
-           var myModal = new bootstrap.Modal(document.getElementById('myModal'));
            myModal.show();
             return false; 
             
@@ -46,8 +45,7 @@
             document.getElementById("error").innerHTML="La saisie du prenom est obligatoire";    
             document.getElementById("error").style.display = 'block' ;                          
             myForm["prenom"].focus(); // Focus
-            alert("Mettez votre prenom."); 
-            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            alert("Mettez votre prenom.");            
             myModal.show();
            
             return false; 
@@ -65,7 +63,6 @@
             document.getElementById("error").style.display = 'block' ;                              
             myForm["datenaissance"].focus(); // Focus
             alert("Mettez votre date de naissance."); 
-            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
             myModal.show();
          
             return false; 
@@ -85,7 +82,6 @@
             document.getElementById("error").style.display = 'block';                           
             myForm["adresse"].focus(); // Focus
             alert("Mettez votre adresse.");
-            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
             myModal.show(); 
            
             return false; 
@@ -106,7 +102,6 @@
             document.getElementById("error").style.display = 'block' ;                             
             myForm["dmail"].focus(); // Focus
             alert("Mettez votre adresse mail."); 
-            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
             myModal.show();
            
             return false; 
