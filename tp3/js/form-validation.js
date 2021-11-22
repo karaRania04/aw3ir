@@ -1,12 +1,11 @@
 
-window.onload = function () {   // ce code est exécuter une fois que toute la page est téléchargée par le navigateur
-    // voir plus : https://www.w3schools.com/js/js_htmldom.asp
-     console.log( "DOM ready!" );
-     
+
      function validateEmail(mail) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(mail).toLowerCase());
     }
+  
+    
     
     function validation()
     {
@@ -24,6 +23,8 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         //nom
         if (name=="")                                  
         { 
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+             myModal.show("La saisie du nom est obligatoire");
             document.getElementById("error").innerHTML="La saisie du nom est obligatoire"; 
             document.getElementById("error").style.display = 'block';                                
             myForm["name"].focus(); // Focus
@@ -34,7 +35,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         }else
          if(name.length<5)
         {
-            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
+            document.getElementById("error").innerHTML="les champs nom doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';
             return false; 
         }
@@ -51,7 +52,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         } else
             if(prenom.length<5)
         {
-            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
+            document.getElementById("error").innerHTML="les champs prenom doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';
             return false; 
         }
@@ -70,7 +71,14 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
             document.getElementById("error").innerHTML="la date de naissance n'est pas valide";
             document.getElementById("error").style.display = 'block';
             return false; 
+        }else 
+        if( datenaissance.getFullYear()>2021)
+        {
+            document.getElementById("error").innerHTML="la date de naissancefutur";
+            document.getElementById("error").style.display = 'block';
+            return false; 
         }
+
     
         //adresse
         if ( adresse== "")                                  
@@ -84,7 +92,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         } else
             if(adresse.length<5)
         {
-            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
+            document.getElementById("error").innerHTML="les champs addresse doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';
             return false; 
         }
@@ -103,12 +111,13 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
         } else
             if(mail.length<5)
         {
-            document.getElementById("error").innerHTML="les champs texte doivent avoir 5 caractères mininum";
+            document.getElementById("error").innerHTML="les champs mail doivent avoir 5 caractères mininum";
             document.getElementById("error").style.display = 'block';                                 
     
             return false; 
         }else if(!validateEmail(mail))
         {
+
             document.getElementById("error").innerHTML="Synthaxe incorrecte";
             document.getElementById("error").style.display = 'block';                                 
     
@@ -119,11 +128,10 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
       document.getElementById("resultat").innerHTML="Bienvenue Vos Informations sont Validées"+" "+name+" "+prenom ; 
       document.getElementById("resultat").style.display = 'block' ;    
       
-      var myModal = new bootstrap.Modal(document.getElementById('myModal'));
-    myModal.show();
-    
-     return true;
       
-    
+     
+     return true;
+     
     }
- };
+  
+ 
