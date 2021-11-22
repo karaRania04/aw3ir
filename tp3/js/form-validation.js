@@ -1,3 +1,4 @@
+
 window.onload = function () {   // ce code est exécuter une fois que toute la page est téléchargée par le navigateur
     // voir plus : https://www.w3schools.com/js/js_htmldom.asp
      console.log( "DOM ready!" );
@@ -118,7 +119,7 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
       document.getElementById("resultat").innerHTML="Bienvenue Vos Informations sont Validées"+" "+name+" "+prenom ; 
       document.getElementById("resultat").style.display = 'block' ;                                
     
-      return true; 
+      
     
     }
  };
