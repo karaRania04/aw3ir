@@ -3,7 +3,7 @@
         // voir plus : https://www.w3schools.com/js/js_htmldom.asp
          console.log( "DOM ready!" );
          
-         // Y mettre le code Javascript pour valider tous les champs du formulaire
+        // Y mettre le code Javascript pour valider tous les champs du formulaire
          validation();
         // validateEmail(mail);
 
@@ -17,58 +17,49 @@
         var mail = document.getElementById("mail").value;  
         var myModal = new bootstrap.Modal(document.getElementById('myModal'));
         var myModal1 = new bootstrap.Modal(document.getElementById('myModal1'));
-        var myModal2 = new bootstrap.Modal(document.getElementById('myModal2'));
         let dateNow = Date.now()
-    
-       // document.getElementById("error").style.display = 'none' ;                                
-       // document.getElementById("resultat").style.display = 'none';                                 
-    
-         
+       
         //nom
         if (name=="")                                  
-        { 
-            
-            myModal.show();
-            //document.getElementById("error").innerHTML="La saisie du nom est obligatoire"; 
-            //document.getElementById("error").style.display = 'block';                                
-            // myForm["name"].focus(); // Focus
+        {  
+             //myModal.show();
+         
            
             return false; 
             
         }else
          if(name.length<5)
         {
-            myModal2.show();
-            //document.getElementById("error").innerHTML="les champs nom doivent avoir 5 caractères mininum";
-            //document.getElementById("error").style.display = 'block';
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "La taille du nom doit etre superieure a 5"
+            myModal.show();
+
             return false; 
         }
           
         //prenom
         if ( prenom== "")                                  
         { 
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
-            // document.getElementById("error").innerHTML="La saisie du prenom est obligatoire";    
-           // document.getElementById("error").style.display = 'block' ;                          
-           // myForm["prenom"].focus(); // Focus
-                         
            
             return false; 
         } else
             if(prenom.length<5)
         {
-            myModal2.show();
-            //document.getElementById("error").innerHTML="les champs prenom doivent avoir 5 caractères mininum";
-            //document.getElementById("error").style.display = 'block';
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "La taille du prenom doit etre superieure a 5"
+            myModal.show();
+ 
             return false; 
         }
         //date de  naissance
         if ( datenaissance== "")                                  
         { 
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
-            //document.getElementById("error").innerHTML="La saisie de la date de naissance est obligatoire";  
-            //document.getElementById("error").style.display = 'block' ;                              
-            //myForm["datenaissance"].focus(); // Focus
                      
             return false;
 
@@ -79,27 +70,28 @@
         let nowTimestamp = Date.now()
         if(dateNaissanceTimestamp>nowTimestamp)
         {
-            //document.getElementById("error").innerHTML="Erreur la date est dans le futur";  
-            //document.getElementById("error").style.display = 'block' ;
-            alert("Erreur la date de naissance est dans le futur");
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "Erreur la date de naissance est dans le futur"
+            myModal.show();
+            
             return false; 
         }
     
         //adresse
         if ( adresse== "")                                  
         { 
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
-            //document.getElementById("error").innerHTML="La saisie de l'adresse est obligatoire";   
-            //document.getElementById("error").style.display = 'block';                           
-            //myForm["adresse"].focus(); // Focus
            
             return false; 
         } else
             if(adresse.length<5)
         {
-            myModal2.show();
-            //document.getElementById("error").innerHTML="les champs addresse doivent avoir 5 caractères mininum";
-            //document.getElementById("error").style.display = 'block';
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "La taille de l'adresse doit etre superieure a 5"
+            myModal.show();
+
             return false; 
         }
     
@@ -108,39 +100,33 @@
         //adresse mail
         if ( mail== "")                                  
         { 
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
-            //document.getElementById("error").innerHTML="La saisie du mail est obligatoire";  
-            //document.getElementById("error").style.display = 'block' ;                             
-            //myForm["dmail"].focus(); // Focus
            
             return false; 
         } else
             if(mail.length<5)
         {
-            myModal2.show();
-            //document.getElementById("error").innerHTML="les champs mail doivent avoir 5 caractères mininum";
-            //document.getElementById("error").style.display = 'block';                                 
-    
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "La taille du mail doit etre superieure a 5"
+            myModal.show();
+            
             return false; 
         }else if(!validateEmail(mail))
         {
-
-            //document.getElementById("error").innerHTML="Synthaxe incorrecte";
-            //document.getElementById("error").style.display = 'block';                                 
+            document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
+            document.querySelector(".modal-body ").textContent = "Synthaxe mail incorrecte"
+            myModal.show();                             
     
             return false; 
         }
        
      
-      //document.getElementById("resultat").innerHTML="Bienvenue Vos Informations sont Validées"+" "+name+" "+prenom ; 
-      //document.getElementById("resultat").style.display = 'block' ;    
-     
       document.querySelector(".modal-title .prenom").textContent =prenom;
       document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString()
       document.querySelector(".modal-body img").src = 'https://maps.googleapis.com/maps/api/staticmap?markers='+adresse+'&zoom=7&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'
-        
-
-      
+  
       myModal1.show();
      return true;
 
