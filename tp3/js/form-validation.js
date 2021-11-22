@@ -23,13 +23,13 @@
         //nom
         if (name=="")                                  
         { 
-            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
-             myModal.show("La saisie du nom est obligatoire");
+            
             document.getElementById("error").innerHTML="La saisie du nom est obligatoire"; 
             document.getElementById("error").style.display = 'block';                                
             myForm["name"].focus(); // Focus
            alert("Mettez votre nom."); 
-         
+           var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+           myModal.show();
             return false; 
             
         }else
@@ -47,6 +47,8 @@
             document.getElementById("error").style.display = 'block' ;                          
             myForm["prenom"].focus(); // Focus
             alert("Mettez votre prenom."); 
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
            
             return false; 
         } else
@@ -63,18 +65,14 @@
             document.getElementById("error").style.display = 'block' ;                              
             myForm["datenaissance"].focus(); // Focus
             alert("Mettez votre date de naissance."); 
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
          
             return false; 
         } else
         if(datenaissance.length<5)
         {
             document.getElementById("error").innerHTML="la date de naissance n'est pas valide";
-            document.getElementById("error").style.display = 'block';
-            return false; 
-        }else 
-        if( datenaissance.getFullYear()>2021)
-        {
-            document.getElementById("error").innerHTML="la date de naissancefutur";
             document.getElementById("error").style.display = 'block';
             return false; 
         }
@@ -86,7 +84,9 @@
             document.getElementById("error").innerHTML="La saisie de l'adresse est obligatoire";   
             document.getElementById("error").style.display = 'block';                           
             myForm["adresse"].focus(); // Focus
-            alert("Mettez votre adresse."); 
+            alert("Mettez votre adresse.");
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show(); 
            
             return false; 
         } else
@@ -106,6 +106,8 @@
             document.getElementById("error").style.display = 'block' ;                             
             myForm["dmail"].focus(); // Focus
             alert("Mettez votre adresse mail."); 
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
            
             return false; 
         } else
