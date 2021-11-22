@@ -117,8 +117,12 @@ window.onload = function () {   // ce code est exécuter une fois que toute la p
        
      
       document.getElementById("resultat").innerHTML="Bienvenue Vos Informations sont Validées"+" "+name+" "+prenom ; 
-      document.getElementById("resultat").style.display = 'block' ;                                
+      document.getElementById("resultat").style.display = 'block' ;    
+      
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    myModal.show();
     
+     return true;
       
     
     }
