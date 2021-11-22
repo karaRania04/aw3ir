@@ -18,64 +18,73 @@
       <tr><td>
              <h1 align="center" >Saisie d'une Fiche "Personne"</h1>
      </td></tr>
-   </table>
+   
+
+    <div class="row ">
+    <div class="col ">
     <form  method="post">
-    <table  bgcolor="ffffff" align="center" border="2px">
-    <tr>
-    <td>
+    
 
-    <div class="row justify-content-md-center">
-
-    <div class="col col-lg-2">
+    <div class="row ">
+    <div class="col ">
             <label for="name"><h2>Nom :</h2></label>
      </div>
-     <div class="col col-lg-2">
+     <div class="col ">
             <input type="text" id="name" name="user_name" required>
      </div>
     </div>
 
 
-        < <div class="row justify-content-md-center">
-
-          <div class="col col-lg-2">
+         <div class="row ">
+          <div class="col">
              <label for="prenom"><h2>Prenom :</h2></label>
             </div>
-            <div class="col col-lg-2">
+            <div class="col">
              <input type="text" id="prenom" name="user_prenom" required>
             </div>
           </div>
 
-        <div>
-            <tr>
-            <td><label for="datenaissance"><h2>Date de Naissance :</h2></label></td>
-            <td><input placeholder="JJ/MM/AAAA" type="date" id="datenaissance" name="user_datenaissance" required></td>
-            </tr>
+        <div class="row ">
+            <div class="col">
+            <label for="datenaissance"><h2>Date de Naissance :</h2></label>
+          </div>
+          <div class="col">
+            <input placeholder="JJ/MM/AAAA" type="date" id="datenaissance" name="user_datenaissance" required>
+          </div>
         </div>
+          
 
-
-
-        <div>
-            <tr>
-            <td><label for="adresse"><h2>Adresse :</h2></label></td>
-            <td> <input type="name" id="adresse" name="user_adresse" required></td>
-            </tr>
+        <div class="row ">
+          <div class="col">
+            <label for="adresse"><h2>Adresse :</h2></label>
+          </div>
+          <div class="col">
+            <input type="name" id="adresse" name="user_adresse" required>
+          </div>
         </div>
+           
+        <div class="row ">
+          <div class="col">
+            <label for="mail"><h2>Mail :</h2></label>
+          </div>
+          <div class="col">
+            <input type="email" id="mail" name="user_mail"
+              pattern=".+@globex\.com" placeholder="default@example.com">
+            </div>
+          </div>
+            
 
-
-        <div>
-            <tr>
-            <td><label for="mail"><h2>Mail :</h2></label></td>
-            <td><input type="email" id="mail" name="user_mail"
-              pattern=".+@globex\.com" placeholder="default@example.com"></td>
-            </tr>
-        </div>
        <br><br>
-        <tr><td><td><input type="button" value="Valider" onclick="validation()"></td></td></tr>
-    </table> 
-    </td>
-    </tr> 
-    </table>
+       <div class="row ">
+        <div class="col">
+        <input type="button" value="Valider" onclick="validation()">
+      </div>
+    </div>
+     
+    
     </form>
+  </div>
+</div>
     <table align="center">
       <tr>
         <td>
