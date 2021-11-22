@@ -15,6 +15,7 @@
         var adresse = document.getElementById("adresse").value;            
         var mail = document.getElementById("mail").value;  
         var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+        let dateNow = Date.now()
     
         document.getElementById("error").style.display = 'none' ;                                
         document.getElementById("resultat").style.display = 'none';                                 
@@ -24,11 +25,12 @@
         if (name=="")                                  
         { 
             
+            myModal.show();
             document.getElementById("error").innerHTML="La saisie du nom est obligatoire"; 
             document.getElementById("error").style.display = 'block';                                
-            myForm["name"].focus(); // Focus
+           // myForm["name"].focus(); // Focus
            alert("Mettez votre nom."); 
-           myModal.show();
+           
             return false; 
             
         }else
@@ -42,11 +44,12 @@
         //prenom
         if ( prenom== "")                                  
         { 
+            myModal.show();
             document.getElementById("error").innerHTML="La saisie du prenom est obligatoire";    
             document.getElementById("error").style.display = 'block' ;                          
-            myForm["prenom"].focus(); // Focus
+            //myForm["prenom"].focus(); // Focus
             alert("Mettez votre prenom.");            
-            myModal.show();
+            
            
             return false; 
         } else
@@ -59,30 +62,35 @@
         //date de  naissance
         if ( datenaissance== "")                                  
         { 
+            myModal.show();
             document.getElementById("error").innerHTML="La saisie de la date de naissance est obligatoire";  
             document.getElementById("error").style.display = 'block' ;                              
-            myForm["datenaissance"].focus(); // Focus
+           // myForm["datenaissance"].focus(); // Focus
             alert("Mettez votre date de naissance."); 
-            myModal.show();
-         
-            return false; 
-        } else
-        if(datenaissance.length<5)
+                     
+            return false;
+
+        }
+        //verifier si la date est dans le futur
+        let dateNaissance = new Date(datenaissance); // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date/Date#syntaxe
+        let dateNaissanceTimestamp = dateNaissance.getTime();
+        let nowTimestamp = Date.now()
+        if(dateNaissanceTimestamp>nowTimestamp)
         {
-            document.getElementById("error").innerHTML="la date de naissance n'est pas valide";
-            document.getElementById("error").style.display = 'block';
+            document.getElementById("error").innerHTML="Erreur la date est dans le futur";  
+            document.getElementById("error").style.display = 'block' ;
             return false; 
         }
-
     
         //adresse
         if ( adresse== "")                                  
         { 
+            myModal.show();
             document.getElementById("error").innerHTML="La saisie de l'adresse est obligatoire";   
             document.getElementById("error").style.display = 'block';                           
-            myForm["adresse"].focus(); // Focus
+            //myForm["adresse"].focus(); // Focus
             alert("Mettez votre adresse.");
-            myModal.show(); 
+        
            
             return false; 
         } else
@@ -98,11 +106,12 @@
         //adresse mail
         if ( mail== "")                                  
         { 
+            myModal.show();
             document.getElementById("error").innerHTML="La saisie du mail est obligatoire";  
             document.getElementById("error").style.display = 'block' ;                             
-            myForm["dmail"].focus(); // Focus
+            //myForm["dmail"].focus(); // Focus
             alert("Mettez votre adresse mail."); 
-            myModal.show();
+            
            
             return false; 
         } else

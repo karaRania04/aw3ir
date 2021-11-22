@@ -1,0 +1,14 @@
+div#error{
+    
+    background-color: rgb(219, 119, 157);
+    border:1px solid black;
+    padding: 5px;
+    display: none;
+}
+
+div#resultat{
+    background-color: rgb(48, 128, 12);
+    border:1px solid rgb(255, 255, 255);
+    padding: 5px;
+    display: none;
+}
