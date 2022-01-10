@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
   <script type="text/javascript" src="js/form-validation.js"></script>
   <script type="text/javascript" src="js/store.js"></script>
+  <script type="text/javascript" src="js/gps.js"></script>
   <!--script type="text/javascript" src="js/gps.js"></script-->
   <!-- CSS boostrap -->
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -56,11 +57,7 @@ $('html').keyup(function(e){
         <div class="col "><label for="name">
             <h2>Nom :</h2>
           </label></div>
-        <div class="col "><input type="text" id="name" name="user_name" required></div>
-        <script>  
-          i = 0;  
-        </script> 
-        <div class="col"><span>0</span>car</div>  
+        <div class="col "><input type="text" id="name" name="user_name" required><span>       0</span>car </div>  
       </div>
 
 
@@ -69,11 +66,7 @@ $('html').keyup(function(e){
           <label for="prenom">
             <h2>Prenom :</h2>
           </label></div>
-          <script>  
-            i = 0;  
-          </script> 
-        <div class="col"><input type="text" id="prenom" name="user_prenom" required></div>
-        <div class="col"><span>0</span>car</div>   
+        <div class="col"><input type="text" id="prenom" name="user_prenom" required><span>      0</span>car</div>   
       </div>
 
       <div class="row justify-content-md-center">
@@ -84,17 +77,22 @@ $('html').keyup(function(e){
             required></div>
       </div>
 
-
+      <br>
       <div class="row justify-content-md-center">
         <div class="col"><label for="adresse">
             <h2>Adresse :</h2>
           </label></div>
-        <div class="col"><input type="name" id="adresse" name="user_adresse" required>         
+        <div class="col"><input type="name" id="adresse" name="user_adresse" required> 
+            
+          <input type="button" value="GPS" onclick="getLocation()" > 
+          <br> <br> 
+          <div id=map href="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"> </div> 
+        </input>    
  <!--button type="button" class="btn btn-primary" onclick=" getLocation() " id="clickMe">GPS</button-->
  <img href="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" style=" max-width: 100%;">
         </div>
       </div>
-     
+      <br>
       <div class="row justify-content-md-center">
         <div class="col"><label for="mail">
             <h2>Mail :</h2>
@@ -106,7 +104,7 @@ $('html').keyup(function(e){
 
     </div>
   </div>
-      <br><br>
+      
       <div class="row justify-content-md-center">
         <div class="col" align="center"><input type="button" value="Ajouter" onclick="validation()"></div>
       </div>
