@@ -1,3 +1,4 @@
+
 // demande de la localisation à l'utilisateur
 function getLocation() {
     if (navigator.geolocation) {
