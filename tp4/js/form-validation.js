@@ -18,7 +18,7 @@
         var myModal = new bootstrap.Modal(document.getElementById('myModal'));
         var myModal1 = new bootstrap.Modal(document.getElementById('myModal1'));
         let dateNow = Date.now()
-       
+        var cpt=0;
         //nom
         if (name=="")                                  
         {  
@@ -33,7 +33,7 @@
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
             document.querySelector(".modal-body ").textContent = "La taille du nom doit etre superieure a 5"
             myModal.show();
-
+            
             return false; 
         }
           
