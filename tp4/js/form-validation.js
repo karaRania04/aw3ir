@@ -123,9 +123,21 @@
     
             return false; 
         }
-       
+       //Ajoute toutes les informations au tableau JSON
+      
        contactStore.add(name, prenom, dateNaissance, adresse, mail);
-       contactStore.getList();
+     
+        console.log(contactStore.getList());
+        for(var index in contactStore){
+            console.log(contactStore[index].name);
+          }
+
+        //   document.querySelector("table tbody").innerHTML = document.querySelector("table tbody").innerHTML +
+        //   '<tr><td>'+nom+'</td><td>'+prenom+'</td><td>';
+      
+        document.querySelector("table tbody").innerHTML = document.querySelector("table tbody").innerHTML +
+        '<tr><td>'+name+'</td><td>'+prenom+'</td><td>'+dateNaissance+'</td><td>'+adresse+'</td><td>'+mail+'</td></tr>';
+
 
       document.querySelector(".modal-title .prenom").textContent =prenom;
       document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString() 
