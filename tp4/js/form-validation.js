@@ -80,22 +80,26 @@
         //adresse
         if ( adresse== "")                                  
         { 
+            getLocation();
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
             document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
-           
+
             return false; 
         } else
             if(adresse.length<5)
         {
+            getLocation();
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
             document.querySelector(".modal-body ").textContent = "La taille de l'adresse doit etre superieure a 5"
             myModal.show();
 
             return false; 
+        }else{
+            getLocation();
         }
-    
-    
+        
+        
     
         //adresse mail
         if ( mail== "")                                  
@@ -140,4 +144,28 @@
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(mail).toLowerCase());
     }
+  
+
+    function NombreCaractere() {
+        
+        return re.test(String(mail).toLowerCase());
+    }
+  
+
+
+    var x = document.getElementById("clickMe");
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +"<br>Longitude: " + position.coords.longitude;
+        return ("Latitude: " + position.coords.latitude +"<br>Longitude: " + position.coords.longitude);
+      }
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
   
