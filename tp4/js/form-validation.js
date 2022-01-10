@@ -80,7 +80,7 @@
         //adresse
         if ( adresse== "")                                  
         { 
-            getLocation();
+           // getLocation();
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
             document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
@@ -89,14 +89,12 @@
         } else
             if(adresse.length<5)
         {
-            getLocation();
+            //getLocation();
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
             document.querySelector(".modal-body ").textContent = "La taille de l'adresse doit etre superieure a 5"
             myModal.show();
 
             return false; 
-        }else{
-            getLocation();
         }
         
         
@@ -126,9 +124,10 @@
             return false; 
         }
        
-     
+       contactStore.add(name, prenom, dateNaissance, adresse, mail);
+       contactStore.getList();
+
       document.querySelector(".modal-title .prenom").textContent =prenom;
-      
       document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString() 
       document.querySelector(".modal-body img").src = 'https://maps.googleapis.com/maps/api/staticmap?markers='+adresse+'&zoom=7&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'
       //document.querySelector(".modal-body .a").src = 'http://maps.google.com/maps?q=Londre'
@@ -148,17 +147,3 @@
 
 
 
-var x = document.getElementById("demo");
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-  
