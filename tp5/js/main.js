@@ -76,30 +76,31 @@ window.onload = function () {
             }, 
             meteo: function (_city) {  
                 
-    this.cityWeatherLoading = true;
+                this.cityWeatherLoading = true;
 
-    // appel AJAX avec fetch
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+_city.name+'&units=metric&lang=fr&apikey=VOTRE_APIKEY')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(json) {
-            app.cityWeatherLoading = false;
+                // appel AJAX avec fetch
+             
+                fetch('https://api.openweathermap.org/data/2.5/weather?q='+_city.name+'&units=metric&lang=fr&apikey=e7abd7d2e2cb67a9bf70b98d7a8a76f3')
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        app.cityWeatherLoading = false;
 
-            // test du code retour
-            // 200 = OK
-            // 404 = city not found 
-            if(json.cod === 200){
-                // on met la réponse du webservice dans la variable cityWeather
-                app.cityWeather = json;
-                app.message = null;
-            }else{
-                app.cityWeather = null;
-                app.message = 'Météo introuvable pour ' + _city.name 
-                                + ' (' + json.message+ ')';
-            }        
-        });                
-    }
+                        // test du code retour
+                        // 200 = OK
+                        // 404 = city not found 
+                        if(json.cod === 200){
+                            // on met la réponse du webservice dans la variable cityWeather
+                            app.cityWeather = json;
+                            app.message = null;
+                        }else{
+                            app.cityWeather = null;
+                            app.message = 'Météo introuvable pour ' + _city.name 
+                                            + ' (' + json.message+ ')';
+                        }        
+                    });                
+                }
             
         }
     });

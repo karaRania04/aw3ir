@@ -13,12 +13,14 @@
   <!-- CSS boostrap -->
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/weather-icons.css">
+ 
+ 
   <!-- librairie Javascript de boostrap pour pouvoir utiliser les composants interactifs (modal https://getbootstrap.com/docs/5.1/components/modal/ , collapse...) -->
-  <script src="js/bootstrap.bundle.js"></script>
+
 
   <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/libs/bootstrap.js"></script>
-  <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+ 
   <script type="text/javascript" src="js/libs/vue.js"></script>
 
 
@@ -43,9 +45,10 @@
     <body>   
         
     <div id="weatherApp">     
-        <h1>TP5</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <br>
+        <h1>        WebApp Meteo avec Vuejs</h1>
+        <br>
+        <br>
        <!-- formulaire de saisie de ville -->
         <form v-on:submit="addCity">
             <div class="input-group">
@@ -79,6 +82,47 @@
         <div class="alert alert-primary" role="alert" v-if="cityList.length==0">
             Aucune ville de saisie!
         </div>
+        <!-- meteo de la ville selectionnée -->
+<div v-if="cityWeatherLoading"> Chargement de la météo...</div>
+
+<div v-if="cityWeather">
+
+    <div class="card" style="width: 18rem;" v-if="cityWeather">
+        <div class="card-header">
+            {{cityWeather.name}} 
+        </div>
+        <img class="card-img-top" v-bind:src="''" alt="Card image cap">
+
+        <div class="card-body">
+            <h5 class="card-title">
+                <i v-bind:class="'wi wi-owm-day-'+cityWeather.weather[0].id"></i>
+                {{cityWeather.main.temp}}<i class="wi wi-celsius"></i>                            
+            </h5>
+            <p class="card-text">{{cityWeather.weather[0].description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <i class="wi wi-cloud"></i> Nuage: {{cityWeather.clouds.all}}%                            
+            </li>
+            <li class="list-group-item">
+                <i class="wi wi-humidity"></i> Humidité: {{cityWeather.main.humidity}}%                           
+            </li>
+            <li class="list-group-item">
+                <i class="wi wi-windy"></i> Vent: {{cityWeather.wind.speed}} km/h
+            </li>
+            <li class="list-group-item">
+                <i class="wi wi-sunrise"></i> 
+                Levé du soleil: 
+                {{new Date(cityWeather.sys.sunrise * 1000).toTimeString()}}
+            </li>
+            <li class="list-group-item">
+                <i class="wi wi-sunset"></i>
+                Couché du soleil: 
+                {{new Date(cityWeather.sys.sunset * 1000).toTimeString()}}
+            </li>
+        </ul>        
+    </div>
+</div>
 
  
 
