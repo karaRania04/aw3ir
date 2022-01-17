@@ -80,7 +80,7 @@
         //adresse
         if ( adresse== "")                                  
         { 
-           // getLocation();
+           getLocation();
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
             document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
@@ -170,6 +170,7 @@ function showPosition(position) {
     var img_url = `https://maps.googleapis.com/maps/api/staticmap?center=${latlon}&zoom=14&size=400x300&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg`;
     
     $("#map").html(`<img src='${img_url}'>`);
+   
 }
 
 // Au cas ou l'utilisateur refuse

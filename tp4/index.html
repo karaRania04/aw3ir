@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Mon Formulaire</title>
-  <link rel="stylesheet" href="css/formulaire.css">
+
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
   <script type="text/javascript" src="js/form-validation.js"></script>
   <script type="text/javascript" src="js/store.js"></script>
@@ -57,7 +57,7 @@ $('html').keyup(function(e){
         <div class="col "><label for="name">
             <h2>Nom :</h2>
           </label></div>
-        <div class="col "><input type="text" id="name" name="user_name" required><span>       0</span>car </div>  
+        <div class="col "><input type="text" id="name" name="user_name" aria-label="Search for..." autofocus required><span>       0</span>car </div>  
       </div>
 
 
@@ -86,7 +86,8 @@ $('html').keyup(function(e){
             
           <input type="button" value="GPS" onclick="getLocation()" > 
           <br> <br> 
-          <div id=map href="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"> </div> 
+         
+          <div id=map href="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" > </div> 
         </input>    
  <!--button type="button" class="btn btn-primary" onclick=" getLocation() " id="clickMe">GPS</button-->
  <img href="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" style=" max-width: 100%;">
@@ -156,17 +157,6 @@ $('html').keyup(function(e){
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-
-        <div class="modal-body">Vous ètes née le
-
-          <span class="date"></span> et vous habitez ici
-          
-          <img src="map.png" style="
-            max-width: 100%;
-        ">
-        <a href="http://maps.google.com/maps?"  target="_blank">Lien Google Maps</a>
-         
-        </div>
 
         <div class="modal-footer">
           
