@@ -46,7 +46,7 @@
         
     <div id="weatherApp">     
         <br>
-        <h1>        WebApp Meteo avec Vuejs</h1>
+        <h1>  WebApp Meteo avec Vuejs</h1>
         <br>
         <br>
        <!-- formulaire de saisie de ville -->
@@ -91,9 +91,11 @@
         <div class="card-header">
             {{cityWeather.name}} 
         </div>
-        <img class="card-img-top" v-bind:src="''" alt="Card image cap">
-
-        <div class="card-body">
+        
+        <img class="card-img-top" v-bind:src="'https://maps.googleapis.com/maps/api/staticmap?markers='+ cityWeather.coord.lat+','+cityWeather.coord.lon+'&zoom=5&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'" alt="Card image cap">
+      
+     
+        <div class="card-body">00
             <h5 class="card-title">
                 <i v-bind:class="'wi wi-owm-day-'+cityWeather.weather[0].id"></i>
                 {{cityWeather.main.temp}}<i class="wi wi-celsius"></i>                            
@@ -113,12 +115,12 @@
             <li class="list-group-item">
                 <i class="wi wi-sunrise"></i> 
                 Levé du soleil: 
-                {{new Date(cityWeather.sys.sunrise * 1000).toTimeString()}}
+                {{new Date(cityWeather.sys.sunrise * 1000).toLocaleTimeString()}}
             </li>
             <li class="list-group-item">
                 <i class="wi wi-sunset"></i>
                 Couché du soleil: 
-                {{new Date(cityWeather.sys.sunset * 1000).toTimeString()}}
+                {{new Date(cityWeather.sys.sunset * 1000).toLocaleTimeString()}}
             </li>
         </ul>        
     </div>
