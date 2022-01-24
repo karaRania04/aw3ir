@@ -9,7 +9,14 @@ export class MeteoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+ 
 
 }
+city: MeteoItem= { 
+  name:'', 
+  id: 0,
+  weather: null
+
+};

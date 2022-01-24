@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// debut du fichier
+import { FormsModule } from '@angular/forms'; // <--  Ajouter la référence ici
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MeteoComponent } from './meteo/meteo.component';
 
@@ -12,7 +13,7 @@ import { MeteoComponent } from './meteo/meteo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule //<-- Ajouter la référence ici aussi
   ],
   providers: [],
   bootstrap: [AppComponent]
