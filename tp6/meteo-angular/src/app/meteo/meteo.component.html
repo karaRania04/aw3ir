@@ -19,7 +19,7 @@
     {{city.name.length}} caractères
   </small>
 
-  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+  <div *ngIf="name.invalid && (name.dirty || name.touched) && name.errors" class="alert alert-danger">
 
     <div *ngIf="name.errors['required']">
       La saisie de la ville est obligatoire
@@ -28,4 +28,6 @@
       Doit contenit au moins 3 caratères.
     </div>
   </div>
+  
 </form>
+
