@@ -80,7 +80,7 @@
         //adresse
         if ( adresse== "")                                  
         { 
-           getLocation();
+           //getLocation();
             document.querySelector(".modal-title ").textContent ="Erreur dans le formulaire";
             document.querySelector(".modal-body ").textContent = "Tout les Champs sont obligatoire"
             myModal.show();
@@ -95,7 +95,12 @@
             myModal.show();
 
             return false; 
-        }
+    }else
+    {
+        var l=adresse.getLocation();
+        document.querySelector(".modal-body img").src = `https://maps.googleapis.com/maps/api/staticmap?center='+l+'&zoom=14&size=400x300&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg`
+
+    }
         
         
     
@@ -141,7 +146,7 @@
 
       document.querySelector(".modal-title .prenom").textContent =prenom;
       document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString() 
-      document.querySelector(".modal-body img").src = 'https://maps.googleapis.com/maps/api/staticmap?markers='+adresse+'&zoom=7&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'
+      //document.querySelector(".modal-body img").src = 'https://maps.googleapis.com/maps/api/staticmap?markers='+adresse+'&zoom=7&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'
       //document.querySelector(".modal-body .a").src = 'http://maps.google.com/maps?q=Londre'
       //document.querySelector(".modal-body").innerHTML = '<a href="http://maps.google.com/maps?q=Paris?" />' 
       myModal1.show();
@@ -156,41 +161,10 @@
         return re.test(String(mail).toLowerCase());
     }
     // demande de la localisation à l'utilisateur
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        $("#map").html("Geolocation is not supported by this browser.");
-    }
-}
 
-// Si l"utilisateur l'autorise, on récupère les coordonnées dans l'objet "position"
-function showPosition(position) {
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-    var img_url = `https://maps.googleapis.com/maps/api/staticmap?center=${latlon}&zoom=14&size=400x300&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg`;
-    
-    $("#map").html(`<img src='${img_url}'>`);
-   
-}
 
-// Au cas ou l'utilisateur refuse
-// Ou si une erreur arrive
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            $("#map").html("User denied the request for Geolocation.");
-            break;
-        case error.POSITION_UNAVAILABLE:
-            $("#map").html("Location information is unavailable.");
-            break;
-        case error.TIMEOUT:
-            $("#map").html("The request to get user location timed out.");
-            break;
-        case error.UNKNOWN_ERROR:
-            $("#map").html("An unknown error occurred.");
-            break;
-    }
-}
+
+
   
 
 
