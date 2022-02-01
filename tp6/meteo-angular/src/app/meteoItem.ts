@@ -1,7 +1,7 @@
 
 
 export interface MeteoItem {
-    id: number ;
-    name: string ;
+    id: number;
+    name: string;
     weather: any
 }

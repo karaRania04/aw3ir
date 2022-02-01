@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MeteoItem } from '../meteoItem';
 
+
 @Injectable({ providedIn: 'root' })
 export class MeteoService {
 

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // debut du fichier
 import { FormsModule } from '@angular/forms'; // <--  Ajouter la référence ici
 import { RouterModule, Routes } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { MeteoComponent } from './meteo/meteo.component';
 import { MeteoDetailComponent } from './meteo-detail/meteo-detail.component';
@@ -31,8 +32,7 @@ const appRoutes: Routes = [
     )
     // autres imports ici
   ],
-  ...,
-  declarations: [
+   declarations: [
     MeteoDetailComponent
   ]
 })
