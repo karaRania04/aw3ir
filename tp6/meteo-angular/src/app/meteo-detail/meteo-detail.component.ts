@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {MeteoService} from '../services/meteo.service'
-import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -21,21 +20,16 @@ export class MeteoDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getMeteo();
+    this.getMeteo();    
   }
 
   getMeteo(): void {
-    const name = this.route.snapshot.paramMap.get('name'); 
-    // pour lire la paramètre 'name' dans l'URL de la page  comme définit dans le router avec
-    // path: 'meteo/:name'
-
+    const name = this.route.snapshot.paramMap.get('name');
     console.log('getmeteo',name);
-    if(name)
-    {
-      this.meteoService.getMeteo(name)
+    if(name!=null)
+  {  this.meteoService.getMeteo(name)
       .then(meteo => this.meteo = meteo)
-      .catch(fail => this.meteo = fail);
-    }
+      .catch(fail => this.meteo = fail);}
   }
 
 }
