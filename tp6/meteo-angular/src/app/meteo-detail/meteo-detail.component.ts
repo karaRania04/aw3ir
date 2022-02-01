@@ -25,11 +25,17 @@ export class MeteoDetailComponent implements OnInit {
   }
 
   getMeteo(): void {
-    const name = this.route.snapshot.paramMap.get('name');
+    const name = this.route.snapshot.paramMap.get('name'); 
+    // pour lire la paramètre 'name' dans l'URL de la page  comme définit dans le router avec
+    // path: 'meteo/:name'
+
     console.log('getmeteo',name);
-    this.meteoService.getMeteo(name)
+    if(name)
+    {
+      this.meteoService.getMeteo(name)
       .then(meteo => this.meteo = meteo)
       .catch(fail => this.meteo = fail);
+    }
   }
 
 }
