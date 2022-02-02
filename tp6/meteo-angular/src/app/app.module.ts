@@ -1,13 +1,16 @@
-// debut du fichier
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
- // <--  Ajouter les références ici
+
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <--  Ajouter la référence ici-->
 
 import { AppComponent } from './app.component';
-import { MeteoDetailComponent } from './meteo-detail/meteo-detail.component';
 import { MeteoComponent } from './meteo/meteo.component';
+
+import { RouterModule, Routes } from '@angular/router';
+import { MeteoDetailComponent } from './meteo-detail/meteo-detail.component';
+
+
 const appRoutes: Routes = [
   { 
     path: 'meteo/:name',  // la page  affichant la météo prendra comme paramètre 'name'
@@ -26,16 +29,17 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MeteoComponent
+    MeteoComponent,MeteoDetailComponent
   ],
+
   imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule, //<-- Ajouter la référence ici aussi
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    ),
-    // autres imports ici
-    BrowserModule,
-    FormsModule, ReactiveFormsModule //<-- Ajouter les références ici aussi
+  )
   ],
   providers: [],
   bootstrap: [AppComponent]

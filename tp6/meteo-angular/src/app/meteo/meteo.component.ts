@@ -14,13 +14,12 @@ export class MeteoComponent implements OnInit {
     weather: null
   };
 
-  cityList: MeteoItem[] = [];
-
+  cityList: any;
   constructor() { }
 
   ngOnInit() {
     if( localStorage['cityList'] !== undefined){
-      this.cityList = JSON.parse(localStorage['cityList']);
+      this.cityList = JSON.parse(localStorage['cityList'] );
     }else{
       this.cityList = [];
     }
@@ -46,9 +45,9 @@ export class MeteoComponent implements OnInit {
 
   }
 
-  remove(_city: any) {
+  remove(_city: { name: any; }) {
     // on utilise 'filter' pour retourne une liste avec tous les items ayant un nom différent de _city.name
-    this.cityList = this.cityList.filter(item =>
+    this.cityList = this.cityList.filter((item: { name: any; }) =>
       item.name != _city.name
     );
     this.saveCityList();
@@ -58,7 +57,7 @@ export class MeteoComponent implements OnInit {
 
     // la méthode 'filter' retourne une liste contenant tous les items ayant un nom égale à _cityName
     // doc. sur filter : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter
-    if (this.cityList.filter(item =>
+    if (this.cityList.filter((item: { name: string; }) =>
       item.name.toUpperCase() == _cityName.toUpperCase()
     ).length > 0) {
       return true;
