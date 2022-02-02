@@ -54,7 +54,7 @@ export class MeteoComponent implements OnInit {
     this.saveCityList();
   }
 
-  isCityExist(_cityName: string) {
+  isCityExist(_cityName) {
 
     // la méthode 'filter' retourne une liste contenant tous les items ayant un nom égale à _cityName
     // doc. sur filter : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter
