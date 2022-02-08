@@ -14,22 +14,22 @@
 
   <!-- librairie Javascript de boostrap pour pouvoir utiliser les composants interactifs (modal https://getbootstrap.com/docs/5.1/components/modal/ , collapse...) -->
   <script src="js/bootstrap.bundle.js"></script>
-  <script>  
-    i = 0;  
-    $(document).ready(function(){  
-        $("input").keypress(function(){  
-         
-          $("span").text (i += 1); 
-        }
-       ); 
-    });  
-    
-$('html').keyup(function(e){
-    if(e.keyCode == 8 && i!=0) {
-        $("span").text (i -= 1); 
-    }
-});
+
+  
 </script>  
+<script src="http://code.jquery.com/jquery-1.5.js"></script>
+    <script>
+      function countChar(val) {
+        var len = val.value.length;        
+          $('#charNum').text(len); 
+      };
+
+      function countChar1(val1) {
+        var len1 = val1.value.length;        
+          $('#charNum1').text(len1); 
+      };
+      
+    </script>
 </head>
 
 <body style="background-color:#e5f4f7;">
@@ -57,7 +57,9 @@ $('html').keyup(function(e){
         <div class="col "><label for="name">
             <h2>Nom :</h2>
           </label></div>
-        <div class="col "><input type="text" id="name" name="user_name" aria-label="Search for..." autofocus required><span>       0</span>car </div>  
+        <div class="col "><input type="text" id="name" onkeyup="countChar(this)" name="user_name"required > <span id="charNum"> </span> car</div>  
+        
+   
       </div>
 
 
@@ -66,7 +68,7 @@ $('html').keyup(function(e){
           <label for="prenom">
             <h2>Prenom :</h2>
           </label></div>
-        <div class="col"><input type="text" id="prenom" name="user_prenom" required><span>      0</span>car</div>   
+        <div class="col"><input type="text" id="prenom"  onkeyup="countChar1(this)" name="user_prenom" required><span id="charNum1"> </span> car</div>   
       </div>
 
       <div class="row justify-content-md-center">
@@ -87,11 +89,10 @@ $('html').keyup(function(e){
           <input type="button" value="GPS" onclick="getLocation()" > 
 
           <br> <br> 
+          <div id="map"></div>
          
-          <!--div id=map href="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" > </div--> 
         </input>    
- <!--button type="button" class="btn btn-primary" onclick=" getLocation() " id="clickMe">GPS</button-->
- <!--img href="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg" style=" max-width: 100%;"-->
+ 
         </div>
       </div>
       <br>
