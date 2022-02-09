@@ -1,6 +1,5 @@
 <!-- meteo de la ville selectionnée -->
 <!-- meteo de la ville selectionnée -->
-
 <div *ngIf="meteo && meteo.cod === 200">
 
   <nav aria-label="breadcrumb">
@@ -40,8 +39,6 @@
           <li class="list-group-item">
               <i class="wi wi-sunrise"></i> Levé du soleil: {{ meteo.dt | date:'shortTime' }}
               <!-- // Date au format Timestamp à transformer au format 'H:m-->
-
-
           </li>
           <li class="list-group-item">
               <i class="wi wi-sunset"></i>Couché du soleil: {{meteo.sys.sunset | date:'short' }}
@@ -54,6 +51,4 @@
 
   {{meteo.message}} (erreur {{meteo.cod}})
 </div>
-
-
-<hr> {{meteo | json}}
+<hr> 
