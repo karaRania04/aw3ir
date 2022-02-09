@@ -14,8 +14,7 @@
 
   <!-- librairie Javascript de boostrap pour pouvoir utiliser les composants interactifs (modal https://getbootstrap.com/docs/5.1/components/modal/ , collapse...) -->
   <script src="js/bootstrap.bundle.js"></script>
-
-  
+ 
 </script>  
 <script src="http://code.jquery.com/jquery-1.5.js"></script>
     <script>
@@ -28,11 +27,41 @@
         var len1 = val1.value.length;        
           $('#charNum1').text(len1); 
       };
+
+      function countChar2(val2) {
+        var len2 = val2.value.length;        
+          $('#charNum2').text(len2); 
+      };
       
     </script>
+
+<style>
+  .bouton {
+    background-color: #cfdd0a;
+    border: none;
+    color: rgb(14, 9, 9);
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .bouton:hover {
+    background-color: #bd0505;
+    color: white;
+  }
+  .bouton1 {
+    background-color: #3674d1;
+    border: none;
+    color: rgb(248, 248, 248);
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  </style>
 </head>
 
-<body style="background-color:#e5f4f7;">
+<body style="background-color:#e6d69d;">
 
   <div class="container">
 
@@ -44,24 +73,18 @@
       bootstrap v5.1.3
     </div>
 
-
-
-    <form method="post">
+    <form method="post" id="frm">
 
       <div class="row justify-content-md-center ">
         <div class="col ">
-
-
 
       <div class="row justify-content-md-center ">
         <div class="col "><label for="name">
             <h2>Nom :</h2>
           </label></div>
-        <div class="col "><input type="text" id="name" onkeyup="countChar(this)" name="user_name"required > <span id="charNum"> </span> car</div>  
-        
-   
+        <div class="col "><input type="text" id="name" onFocus="javascript:this.value=''" " onkeyup="countChar(this)" name="user_name"required > <span id="charNum"> </span> car</div>  
+         
       </div>
-
 
       <div class="row justify-content-md-center">
         <div class="col">
@@ -86,8 +109,7 @@
           </label></div>
         <div class="col"><input type="name" id="adresse" name="user_adresse" required> 
             
-          <input type="button" value="GPS" onclick="getLocation()" > 
-
+          <input type="button" class="bouton" value="GPS" onclick="getLocation()" > 
           <br> <br> 
           <div id="map"></div>
          
@@ -100,16 +122,14 @@
         <div class="col"><label for="mail">
             <h2>Mail :</h2>
           </label></div>
-        <div class="col"><input type="email" id="mail" name="user_mail" pattern=".+@globex\.com"
-            placeholder="default@example.com"></div>
+        <div class="col"><input type="email" id="mail"onkeyup="countChar2(this)"  name="user_mail" pattern=".+@globex\.com"
+            placeholder="default@example.com"> <span id="charNum2"> </span> car</div>
       </div>
-
-
     </div>
   </div>
       
       <div class="row justify-content-md-center">
-        <div class="col" align="center"><input type="button" value="Ajouter" onclick="validation()"></div>
+        <div class="col" align="center"><input type="button" class="bouton1" value="Valider" onclick="validation()"></div>
       </div>
 
 
@@ -146,33 +166,20 @@
       </div>
     </div>
   </div>
-
-
-
   <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Bienvenue 
-             <span class="prenom"></span> </h5>
-
+          <h5 class="modal-title" id="exampleModalLabel">BRAVO! le formulaire est sauvgardé</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-
         <div class="modal-footer">
-          
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
 
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-
+  
 </body>
-
-</html>s
+</html>

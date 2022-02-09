@@ -4,9 +4,7 @@
         //console.log( "DOM ready!" );
          
         // Y mettre le code Javascript pour valider tous les champs du formulaire
-         validation();
-        // validateEmail(mail);
-
+         validation();          
      };
     function validation()
     {
@@ -23,8 +21,7 @@
         if (name=="")                                  
         {  
              //myModal.show();
-         
-           
+             
             return false; 
             
         }else
@@ -131,33 +128,24 @@
             console.log(contactStore[index].name);
           }
 
-        //   document.querySelector("table tbody").innerHTML = document.querySelector("table tbody").innerHTML +
-        //   '<tr><td>'+nom+'</td><td>'+prenom+'</td><td>';
       
         document.querySelector("table tbody").innerHTML = document.querySelector("table tbody").innerHTML +
-        '<tr><td>'+name+'</td><td>'+prenom+'</td><td>'+dateNaissance+'</td><td>'+adresse+'</td><td>'+mail+'</td></tr>';
+        '<tr><td>'+name+'</td><td>'+prenom+'</td><td>'+dateNaissance.toLocaleDateString()+'</td><td>'+adresse+'</td><td>'+mail+'</td></tr>';
 
 
-      document.querySelector(".modal-title .prenom").textContent =prenom;
-      //document.querySelector(".modal-body .date").textContent = dateNaissance.toLocaleDateString() 
-      //document.querySelector(".modal-body img").src = 'https://maps.googleapis.com/maps/api/staticmap?markers='+adresse+'&zoom=7&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg'
-      //document.querySelector(".modal-body .a").src = 'http://maps.google.com/maps?q=Londre'
-      //document.querySelector(".modal-body").innerHTML = '<a href="http://maps.google.com/maps?q=Paris?" />' 
-      myModal1.show();
-     return true;
-
-
-   
+     myModal1.show();
+     resetForm();
+     return true; 
      
     }
     function validateEmail(mail) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(mail).toLowerCase());
     }
-    // demande de la localisation à l'utilisateur
-
-
-
+    function resetForm() {
+        document.getElementById("frm").reset();
+        document.getElementById("resultat").innerHTML="";
+      }
 
   
 
